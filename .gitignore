@@ -2,4 +2,6 @@ venv/
 static_dev/
 static/
 media/
+.idea/
+.DS_store
 *.sqlite3
