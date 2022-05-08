@@ -1,0 +1,121 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="hy">
+   <head>
+      <meta charset='utf-8'/>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+      <title>Թեստ</title>
+      <meta name="Description" content="">
+      <link rel="stylesheet" href="{% static 'css/color.css' %}">
+      <link rel="stylesheet" href="{% static 'css/style.css' %}">
+      <style>
+      .question img {
+    width: 500px;
+}
+          ul.answers li a {
+    background: #45534633;
+    margin: 10px 0;
+    padding: 11px 20px;
+    font-weight: bold;
+    font-size: 15px;
+}
+          .question {
+    font-size: 1.25em;
+    color: #455346;
+    font-weight: bold;
+    margin-bottom: 25px;
+    text-align: center;
+}
+          div#questions {
+    width: 500px;
+    margin: 0 auto;
+}
+          div#quiz-buttons {
+    display: none !important;
+}
+          #quiz-controls {
+              width: 500px;
+    margin: 0 auto;
+    background: #455346;
+    color: #fff;
+    padding: 1em 1em;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 22px;
+}
+       </style>
+   </head>
+   <body>
+     
+    <!-- header-->
+    {% include 'includes/header.html' %}
+    <!-- header end -->
+      
+      <!-- Main content -->
+      <main id="content" role="main" class="">
+         <section class="main-top" id="">
+           
+          <!-- Breadcrumbs -->
+          <div class="bread-bg" style="background-image: url(/static/img/bg-page.jpg);">
+             <div class="cnt">
+                 <div id="breadcrumbs" class="anothers-bread">
+                     <div class="tit-page">
+                         <h1>Գիտելիքի Ստուգում</h1>
+                     </div>
+                 </div>
+             </div>
+          </div>
+          <!-- Breadcrumbs end -->
+            
+         <secrion class="section about-home-page" id="school-2">
+             <div class="cnt">
+                
+                 <div class="row">
+                    <div class="col">
+                        <div id="quiz" >
+                            <div id="quiz-start-screen" class="flex-content-center">
+                               <div >
+                                   <img src="{% static 'img/quiz.jpg' %}" alt="ԳԻՏԵԼԻՔՆԵՐԻ ՍՏՈՒԳՈՒՄ" style="width: 500px;">
+                                    <p style="margin: 30px 0 40px;"><a href="#" id="quiz-start-btn" class="quiz-button button big" style="background: #4caf50;width: 100%;font-weight: bold;color: #fff;height: 55px;font-size: 22px;">ՍԿՍԵԼ</a></p>
+                               </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              
+             </div>
+         </secrion>
+            
+         </section>
+      </main>
+      <!-- Main content end -->
+      {% include 'includes/footer.html' %}
+      <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://jchamill.github.io/jquery-quiz/jquery.quiz-min.js"></script>
+      <script src="{% static 'js/script.js' %}"></script>
+      
+      <script>
+       $('#quiz').quiz({
+  counter: false,
+  questions: [
+    {
+      'q': '<img src="/static/img/test.jpg"> <br><br><br>Բույսերի և կենդանիների համար անհրաժեշտ է (ընդգծիր սխալ պատասխանը)',
+      'options': [
+        'ջուր, հող',
+        'լույս, ջերմություն',
+        'օդ',
+        'ոչնչացնել բոլոր վնասատուները'
+      ],
+      'correctIndex': 3,
+      'correctResponse': 'Ճիշտ է',
+      'incorrectResponse': 'Սխալ է'
+    }
+  ]
+});
+       </script>
+      
+      
+   </body>
+</html>

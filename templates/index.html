@@ -1,0 +1,112 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+    <meta charset='utf-8'/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Գլխավոր էջ</title>
+    <link rel="stylesheet" href="{% static 'css/color.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+{% include 'includes/header.html' %}
+<!-- Main content -->
+<main id="content" role="main" class="">
+
+    <div class="slider-banner">
+        <div class="video-txt">
+            <video id="video_bg" muted="" loop="" autoplay="" playsinline="">
+                <source src="{% static 'img/video.mp4' %}" type="video/mp4">
+            </video>
+            <div class="all-main-text">
+                <h1>Ես և Շրջակա Աշխարհը</h1>
+                <div class="main-slide-butts align-items-center">
+                    <a href="{% url 'contact_us' %}" class="button light big">Կապ Մեզ Հետ</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Us Home -->
+    <section class="section about-home-page">
+        <div class="cnt">
+            <div class="row align-items-center one">
+                <div class="col">
+                    <div class="about-home-desc text-center">
+                        <h2>Շրջապատող Միջավայր</h2>
+                        <p>Սովորաբար շրջապատող միջավայր ասելով՝ հասկանում են միայն շրջապատող միջավայրը, և այդ իմաստով
+                            այն գործածում են միջազգային համաձայնագրերում, սակայն շրջապատող միջավայրը ավելի լայն
+                            հասկացություն է և ընդգրկում է նաև արհեստական միջավայրի (տնտեսություններ, արդյունաբերություն,
+                            ձեռնարկություններ և այլ ինժեներական կառույցներ) տարրերը, ինչպես նաև տվյալ հասարակարգի
+                            սոցիալական գործոնները։ Կյանքը կարող է գոյություն ունենալ շրջապատող բնական միջավայրի որոշակի
+                            պայմանների շրջանակներում։ Գիտության ու տեխնիկայի բուռն զարգացման, ազգաբնակչության նյութական,
+                            հոգևոր ու գեղագիտական պահանջների անընդհատ աճի ու բարելավման արդի պայմաններում շրջապատող
+                            միջավայրի պահպանման ու բնական պաշարների ռացիոնալ օգտագործման պրոբլեմը ձեռք է բերել
+                            կարևորագույն նշանակություն։ Մարդն իր գործունեությամբ ակտիվորեն ազդում է շրջապատող բնական
+                            միջավայրի վրա, և այդ ազդեցությունը կարող է ունենալ թե՛ դրական, և թե՛ բացասական
+                            հետևանքներ։</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center two">
+                <div class="col col-2">
+                    <div class="about-home-img">
+                        <img src="{% static 'img/d-1.jpeg' %}" alt="About">
+                    </div>
+                </div>
+                <div class="col col-2">
+                    <div class="about-home-desc">
+                        <p>Մթնոլորտը խիստ աղտոտող ածխի, մազութի ու նավթի փոխարեն ներկայումս օգտագործում են գազ,
+                            էլեկտրականություն ու էներգիայի այլ աղբյուրներ, ժողտնտեսության մեջ լայնորեն օգտագործվում է
+                            ատոմային էներգիան։ Բնական շատ նյութեր փոխարինվում են արհեստականներով, պատրաստվում են մեծ
+                            քանակությամբ սինթետիկ նյութեր ու ապրանքներ։ Շարունակվում են ծովի ջրի աղազերծման մեթոդների
+                            ուսումնասիրությունները։</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center three">
+                <div class="col col-2">
+                    <div class="about-home-desc">
+                        <h2>Վերնագիր</h2>
+                        <p>Շրջակա միջավայրի վրա մարդու գործունեության բացասական հետևանքների կանխորոշման, կանխման,
+                            նվազեցման, սահմանված պահանջներին համապատասխան բնակչության առողջության, բնականոն
+                            կենսագործունեության և բարեկեցության ապահովման միջոցառումների համալիր։ Շրջակա միջավայրի
+                            պահպանութան հիմնական խնդիրներն են շրջակա միջավայրի բնական վիճակի պահպանումը, վերականգնումը,
+                            վնասազերծումը, բնական պաշարների խելամիտ օգտագործումը, շրջակա միջավայրի վրա ֆիզիկաքիմիական,
+                            կենսաբանական և այլ վնասակար ազդեցությունների նվազեցումն ու կանխումը։</p>
+                    </div>
+                </div>
+                <div class="col col-2">
+                    <div class="about-home-img">
+                        <img src="{% static 'img/d-2.webp' %}" alt="About">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Us Home -->
+
+    <!-- Banner -->
+    <section class="home-banner">
+        <div class="cnt">
+            <div class="row">
+                <div class="col">
+                    <div class="h-banner">
+                        <h2>Ուսուցչի հետ կապ հաստատելու համար <br>կարող եք ուղարկել հետադարձ կապի պատվեր</h2>
+                        <a href="{% url 'contact_us' %}" class="button big light">Կապ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Banner end -->
+    {% include 'includes/footer.html' %}
+</main>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

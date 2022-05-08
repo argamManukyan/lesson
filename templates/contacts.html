@@ -1,0 +1,154 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="hy">
+<head>
+    <meta charset='utf-8'/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Հետդարձ կապ</title>
+    <meta name="Description" content="">
+    <link rel="stylesheet" href="{% static 'css/color.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<!-- header-->
+{% include 'includes/header.html' %}    <!-- header end -->
+
+<!-- Main content -->
+<main id="content" role="main" class="">
+    <section class="main-top" id="">
+
+        <!-- Breadcrumbs -->
+        <div class="bread-bg" style="background-image: url(/static/img/bg-page.jpg);">
+            <div class="cnt">
+                <div id="breadcrumbs" class="anothers-bread">
+                    <div class="tit-page">
+                        <h1>ԿԱՊ</h1>
+                        <p>Գրեք կամ զանգահարեք, <br>Մենք սիրով կպատասխանի Ձեր հարցերին:</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Breadcrumbs end -->
+
+        <div class="contacts-main-page">
+            <div class="cnt">
+                <div class="row">
+                    <div class="col col-2">
+                        <div class="contact-left">
+                            <div class="c-one-all">
+                                <div class="c-gal align-items-center">
+                                    <img src="{% static 'img/icons/c-location.svg' %}" alt="Address">
+                                    <span>13 Ալեք Մանուկյան փողոց,<br>Երևան 0070</span>
+                                </div>
+                                <div class="c-gal align-items-center">
+                                    <img src="{% static 'img/icons/c-phone.svg' %}" alt="Contact">
+                                    <span class="r-c-o">
+                                <a href="tel:+37410597049">(+374 10) 59 70 49</a></span>
+                                </div>
+
+                                <div class="c-gal align-items-center">
+                                    <img src="{% static 'img/icons/c-email.svg' %}" alt="E-mail">
+                                    <a href="mailto:aspu.am@aspu.am"><span>aspu.am@aspu.am</span></a>
+                                </div>
+
+                                <div class="c-follow">
+                                    <h4>Հետևեք Մեզ </h4>
+                                    <div class="follow-mb">
+                                        <a href="https://www.facebook.com/ASPUhome/">
+                                            <img src="{% static 'img/icons/c-facebook.svg' %}" alt="facebook">
+                                            <span>Facebook</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col col-2">
+                        <div class="contact-right">
+                            <h2>Գրեք Ձեր Հարցը</h2>
+                            <form action="" id="contact-form" method="post" novalidate="novalidate">
+                                {% csrf_token %}
+
+                                <!-- Contact fields -->
+                                <div class="input-fields">
+                                    <input type="text" id="first_name" name="first_name" placeholder="Անուն Ազգանուն *">
+                                </div>
+                                <div class="input-fields">
+                                    <input type="email" id="email" name="email" placeholder="Email *">
+                                </div>
+                                <div class="input-fields">
+                                    <input type="number" name="phone" maxlength="" value="" id="recphoneNumber"
+                                           placeholder="Հեռախոսահամար *">
+                                </div>
+                                <div class="input-fields">
+                                    <textarea name="message" id="message-type" rows="7"
+                                              placeholder="Հաղորդագրություն "></textarea>
+                                </div>
+
+                                <div class="input-fields">
+                                    <div class="butt-sign">
+                                        <input type="submit" class="button big dark" name="submit" value="Ուղարկել">
+                                    </div>
+                                </div>
+                                <!--  Contact fields end -->
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="carpet-map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d719.3559846406042!2d44.523742878021835!3d40.17514390652592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406abcf2315be997%3A0x73de2efcdd9a1ee9!2sArmenian%20State%20Pedagogical%20University!5e0!3m2!1sen!2s!4v1652026261555!5m2!1sen!2s"
+                        width="100%" height="550" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+
+    </section>
+</main>
+<!-- Main content end -->
+{% include 'includes/footer.html' %}
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="{% static 'js/script.js' %}"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+<script>
+
+    //input name
+    $("#cName").attr("value", $("#ContactName").text());
+
+    //Validate
+    $(function () {
+        $('#contact-form').validate({
+            rules: {
+                first_name: "required",
+                email: {
+                    required: true,
+                    email: true
+                },
+                phone: {
+                    required: true
+                },
+            },
+            messages: {
+                first_name: "Անուն Ազգանուն դաշտը պարտադիր է լրացման համար",
+                email: {
+                    required: "Էլ. Փոստ դաշտը պարտադիր է լրացման համար",
+                    email: "Մուտքագրեք Ձեր Էլ. Փոստի հասցեն"
+                },
+                phone: {
+                    required: "Հեռախոսահամար դաշտը պարտադիր է լրացման համար",
+                },
+            },
+            submitHandler: function (form) {
+                form.submit();
+            }
+        });
+    });
+</script>
+</body>
+</html>

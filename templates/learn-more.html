@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="hy">
+   <head>
+      <meta charset='utf-8'/>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+      <title>{{ class_item.name }}</title>
+      <meta name="Description" content="">
+      <link rel="stylesheet" href="{% static 'css/color.css' %}">
+      <link rel="stylesheet" href="{% static 'css/style.css' %}">
+   </head>
+   <body>
+        {% include 'includes/header.html' %}
+      <!-- Main content -->
+      <main id="content" role="main" class="">
+         <section class="main-top" id="">
+           
+          <!-- Breadcrumbs -->
+          <div class="bread-bg" style="background-image: url(/static/img/bg-page.jpg);">
+             <div class="cnt">
+                 <div id="breadcrumbs" class="anothers-bread">
+                     <div class="tit-page">
+                         <h1>{{ class_item.name }}</h1>
+                     </div>
+                 </div>
+             </div>
+          </div>
+          <!-- Breadcrumbs end -->
+            
+         <section class="section about-home-page">
+             <div class="cnt">
+                 <div class="row align-items-center two">
+
+                     {% if  lesson %}
+
+                    <div class="col">
+                        <div class="about-home-desc">
+                            {{ lesson.description|safe }}
+                        </div>
+                    </div>
+
+                     {% else %}
+                         <p>Դասընթացը բացակայում է</p>
+                     {% endif %}
+                </div>
+             </div>
+         </section>
+         </section>
+      </main>
+      <!-- Main content end -->
+      {% include 'includes/footer.html' %}
+      <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="{% static 'js/script.js' %}"></script>
+   </body>
+</html>

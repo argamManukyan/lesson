@@ -1,0 +1,52 @@
+{% load static %}
+<header>
+    <div class="middle-header">
+        <div class="cnt">
+            <div class="row flex-center-between">
+                <div class="col col-auto d-none">
+                    <ul class="rigt-menu-main align-items-center">
+                        <li>
+                            <a href="javascript:void(0)">
+                                <img src="{% static 'img/icons/mob-menu.svg' %}"
+                                     id="offCanvas"
+                                     class="hamburger d-none"
+                                     alt="Open Menu">
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="col col-auto">
+                    <div class="logo-main">
+                        <a href="{% url 'homepage' %}">
+                            <img src="{% static 'img/logo.png' %}" alt="Armenian Carpet">
+                        </a>
+                    </div>
+                </div>
+                <div class="nav-offcanvas">
+                    <div class="nav-offcanvas-menu">
+                        <ul class="align-items-center">
+                            <li class="{% if request.resolver_match.url_name == 'homepage' %}active{% endif %}">
+                                <a href="{% url 'homepage' %}">Գլխավոր</a></li>
+                            {% for class in classes %}
+                            <li class="uWithSubmenu {% if class.get_absolute_url in request.get_full_path %}active{% endif %}">
+                                <a href="{{ class.get_absolute_url }}">{{ class.name }}</a>
+                            </li>
+                            {% endfor %}
+                            <li><a href="#">Տեսահոլովակներ</a></li>
+                            <li class="{% if request.resolver_match.url_name == 'test' %}active{% endif %}"><a href="{% url 'test' %}">Գիտելիքի ստուգում</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col col-auto">
+                    <ul class="rigt-menu-main align-items-center">
+                        <li>
+                            <a href="{% url 'contact_us' %}" class="button big">Կապ Մեզ Հետ</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="offcanvas-overlay d-none"></div>
+            </div>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,46 @@
+{% load static %}
+<footer>
+    <div class="cnt">
+        <div class="row">
+            <div class="col col-auto">
+                <div class="align-items-center footer-top-links">
+                    <ul class="fw_link br-left">
+                        <li><a href="{% url 'homepage' %}">Գլխավոր</a></li>
+                        <li><a href="{% url 'contact_us' %}">Կապ</a></li>
+                        <li><a href="#">Իմանալ ավելին</a></li>
+                    </ul>
+                    <ul class="fw_link br-left">
+                        {% for class in classes %}
+                        <li><a href="{{ class.get_absolute_url }}">{{ class.name }}</a></li>
+                       {% endfor %}
+                    </ul>
+                </div>
+{#                <div class="footer-bottom-links">#}
+{#                    <ul class="align-items-center">#}
+{#                        <li>#}
+{#                            <a href="contact_us.html">#}
+{#                                <img src="img/icons/location.svg" alt="Location">13 Ալեք Մանուկյան#}
+{#                            փողոց, Երևան 0070</a></li>#}
+{#                    </ul>#}
+{#                </div>#}
+            </div>
+            <div class="col col-auto ml-auto no-md-auto">
+                <ul class="align-items-center call-list">
+                    <li><img src="{% static 'img/icons/phone.svg' %}" alt="Կապ">
+                        <a href="{% url 'contact_us' %}"><b>(+374 10) 59 70 49</b></a></li>
+                </ul>
+                <ul class="align-items-center social-list">
+                    <li>
+                        <a href="https://www.facebook.com/ASPUhome/">
+                            <img src="{% static 'img/icons/facebook.svg' %}" alt="facebook">
+                        </a>
+                    </li>
+
+                </ul>
+                <ul class="copyright">
+                    <li><b>© 2022 || բոլոր իրավունքները պաշտպանված են</b></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
