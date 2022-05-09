@@ -33,7 +33,6 @@
                                 <a href="{{ class.get_absolute_url }}">{{ class.name }}</a>
                             </li>
                             {% endfor %}
-                            <li><a href="#">Տեսահոլովակներ</a></li>
                             <li class="{% if request.resolver_match.url_name == 'test' %}active{% endif %}"><a href="{% url 'test' %}">Գիտելիքի ստուգում</a></li>
                         </ul>
                     </div>
